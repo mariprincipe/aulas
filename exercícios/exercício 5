@@ -1,0 +1,28 @@
+int botaoPin = 4; 
+int ledA = 2;
+int estadoBotao = 0;
+
+void setup(){
+  pinMode (ledA , OUTPUT);
+  pinMode (botaoPin , INPUT);
+}
+
+void loop(){
+  estadoBotao = digitalRead (botaoPin);
+  if (estadoBotao == HIGH) {
+    piscaLed ();
+  }
+  else {
+    (estadoBotao == LOW);
+    desligaLed ();
+  }
+}
+void piscaLed ()
+{ 
+  digitalWrite (ledA, LOW);
+  delay(1000);
+}
+void desligaLed()
+{
+  digitalWrite (ledA, HIGH);
+}
